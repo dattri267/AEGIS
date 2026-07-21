@@ -1,0 +1,83 @@
+@import "tailwindcss";
+
+:root {
+  --bg-0: #0b0d10;
+  --bg-1: #14171b;
+  --bg-2: #1b1f24;
+  --border: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.16);
+  --text-primary: #edeef0;
+  --text-secondary: #8b92a0;
+  --text-muted: #5b6270;
+
+  --signal: #4c8eff;
+  --signal-dim: rgba(76, 142, 255, 0.12);
+
+  --good: #34d399;
+  --moderate: #fbbf24;
+  --high: #fb923c;
+  --severe: #f43f5e;
+}
+
+@theme inline {
+  --color-bg-0: var(--bg-0);
+  --color-bg-1: var(--bg-1);
+  --color-bg-2: var(--bg-2);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+  --color-signal: var(--signal);
+  --color-good: var(--good);
+  --color-moderate: var(--moderate);
+  --color-high: var(--high);
+  --color-severe: var(--severe);
+  --font-display: "Space Grotesk", var(--font-fallback-sans);
+  --font-sans: var(--font-fallback-sans);
+  --font-mono: var(--font-fallback-mono);
+}
+
+:root {
+  --font-fallback-sans: -apple-system, "Segoe UI", Inter, Roboto, system-ui, sans-serif;
+  --font-fallback-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+body {
+  background: var(--bg-0);
+  color: var(--text-primary);
+}
+
+.font-fallback {
+  font-family: var(--font-fallback-sans);
+}
+.font-display {
+  font-family: var(--font-display);
+}
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+@keyframes aegis-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
+}
+.animate-aegis-pulse { animation: aegis-pulse 1.8s ease-in-out infinite; }
+
+@keyframes aegis-rise {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-aegis-rise { animation: aegis-rise 0.5s cubic-bezier(.16,1,.3,1) both; }
+
+@keyframes aegis-drawer-in {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+.animate-drawer-in { animation: aegis-drawer-in 0.32s cubic-bezier(.16,1,.3,1) both; }
+
+@keyframes aegis-scale-in {
+  from { opacity: 0; transform: scale(0.97); }
+  to { opacity: 1; transform: scale(1); }
+}
+.animate-scale-in { animation: aegis-scale-in 0.18s ease-out both; }
